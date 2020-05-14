@@ -13,11 +13,11 @@ public class BigIntegerTest_3_3 {
         int k=in.nextInt();
         System.out.println("What is the highest number?");
         int n=in.nextInt();
-        BigInteger lotteryOdds=BigInteger.ONE;
-        for(int i=1;i<=k;i++){
-            lotteryOdds=lotteryOdds.multiply(BigInteger.valueOf(n-i+1)).divide(BigInteger.valueOf(i));
+        BigInteger lotteryOdds;
+        lotteryOdds = BigInteger.ONE;
         //when doing calculus of BigInteger there are special ways.
-        }
+        for(int i=1;i<=k;i++)
+            lotteryOdds = lotteryOdds.multiply(BigInteger.valueOf(n - i + 1)).divide(BigInteger.valueOf(i));
         System.out.println("Your odds are 1 in "+lotteryOdds+".Good Luck!");
     }
 }
