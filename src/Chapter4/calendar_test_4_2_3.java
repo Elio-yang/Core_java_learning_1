@@ -6,7 +6,7 @@ import java.time.LocalDate;
 /**
  * Created by Elio Yang on 2020/5/17.
  */
-public class calendar_test_4_2_3 {
+public class calendar_test_4_2_3{
     public static void main(String[] args) {
         LocalDate date = LocalDate.now();
         int month = date.getMonthValue();
@@ -36,3 +36,26 @@ public class calendar_test_4_2_3 {
         }
     }
 }
+/*
+ API:LocalDate
+ static LocalDate now();
+ construct a object with current date
+
+ static LocalDate of(int year,int month,int day);
+ construct a object with given date
+
+ int getYear();
+ int getMonthValue();
+ int getDayOfMonth();
+ get current y/M/d
+
+ DayOfWeek getDayOfWeek();
+ return a instance of Class DayOfWeek,method getValue() will
+ return a number from 1~7 represents Mon~Sun
+
+ LocalDate plusDays(int n);
+ LocalDate minusDays(int n);
+ get a date which is n days before or after
+
+
+*/
