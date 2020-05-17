@@ -11,6 +11,7 @@ public class calendar_test_4_2_3 {
         LocalDate date = LocalDate.now();
         int month = date.getMonthValue();
         int today = date.getDayOfMonth();
+
         date = date.minusDays(today - 1);
         DayOfWeek weekday = date.getDayOfWeek();
         int val = weekday.getValue();
@@ -19,11 +20,13 @@ public class calendar_test_4_2_3 {
         for (int i = 1; i < val; i++) {
             System.out.print("    ");
         }
+
         while (date.getMonthValue() == month) {
             System.out.printf("%3d", date.getDayOfMonth());
             if (date.getDayOfMonth() == today) {
                 System.out.print("*");
-            } else {
+            }
+            else {
                 System.out.print(" ");
             }
             date = date.plusDays(1);
@@ -31,9 +34,5 @@ public class calendar_test_4_2_3 {
                 System.out.println();
             }
         }
-        if (date.getDayOfWeek().getValue() != 1) {
-            System.out.println();
-        }
-
     }
 }
