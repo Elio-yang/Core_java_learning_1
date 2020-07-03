@@ -9,50 +9,56 @@ import java.util.Random;
  */
 public class ConstructorTest {
     public static void main(String[] args) {
-        var stuff=new Employee[3];
-        stuff[0]=new Employee("Harry",4000,2016,3,23);
-        stuff[1]=new Employee(6000,2016,2,23);
-        stuff[2]=new Employee();
+        var stuff = new Employee[3];
+        stuff[0] = new Employee("Harry", 4000, 2016, 3, 23);
+        stuff[1] = new Employee(6000, 2016, 2, 23);
+        stuff[2] = new Employee();
 
-        for(Employee e : stuff){
+        for (Employee e : stuff) {
             System.out.println(e.toString());
         }
     }
 }
-class Employee{
+
+class Employee {
     private static int nextId;
     private int id;
-    private String name="";
+    private String name = "";
     private double salary;
     private LocalDate hireDay;
+
     //initialize static
     static {
-        var generator=new Random();
-        nextId=generator.nextInt(10000);
+        var generator = new Random();
+        nextId = generator.nextInt(10000);
     }
+
     //initialize objects
     {
         id = nextId;
         nextId++;
     }
+
     //three constructors
-    public Employee(String n,double s,int y,int m,int d){
-        name=n;
-        salary=s;
-        hireDay=LocalDate.of(y,m,d);
-    }
-    public Employee(double s,int y,int m,int d){
-        this("Employee #"+nextId,s,y,m,d);
-    }
-    public Employee(){
-
+    public Employee(String n, double s, int y, int m, int d) {
+        name = n;
+        salary = s;
+        hireDay = LocalDate.of(y, m, d);
     }
 
+    public Employee(double s, int y, int m, int d) {
+        this("Employee #" + nextId, s, y, m, d);
+    }
 
-    public String getName(){
+    public Employee() {
+    }
+
+
+    public String getName() {
         return name;
     }
-    public int getId(){
+
+    public int getId() {
         return id;
     }
 
@@ -60,13 +66,17 @@ class Employee{
         return salary;
     }
 
+    public LocalDate getHireDay() {
+        return hireDay;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + this.id +
-                ", name='" + this.name + '\'' +
+                "id=" + this.getId() +
+                ", name='" + this.getName() + '\'' +
                 ", salary=" + this.getSalary() +
-                ", hireDay=" + hireDay +
+                ", hireDay=" + this.getHireDay() +
                 '}';
     }
 }
