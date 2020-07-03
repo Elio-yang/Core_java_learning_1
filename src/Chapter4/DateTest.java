@@ -6,7 +6,7 @@ import java.util.Date;
 /**
  * Created by Elio Yang on 2020/5/17.
  */
-public class date_test_4_2_1 {
+public class DateTest {
     public static void main(String[] args) {
         String s = new Date().toString();
         System.out.println(s);

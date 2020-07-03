@@ -6,7 +6,7 @@ import java.time.LocalDate;
 /**
  * Created by Elio Yang on 2020/5/17.
  */
-public class calendar_test_4_2_3{
+public class CalenderTest {
     public static void main(String[] args) {
         LocalDate date = LocalDate.now();
         int month = date.getMonthValue();

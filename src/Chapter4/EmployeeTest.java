@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Created by Elio Yang on 2020/6/12.
  */
-public class employee_test_4_3_1 {
+public class EmployeeTest {
     static class Employee {
         private final String name;
         private double salary;
