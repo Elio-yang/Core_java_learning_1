@@ -26,6 +26,7 @@ public class date_test_4_2_1 {
         System.out.println(LocalDate.now());
     }
 }
+
 /*
 
 Using constructor to construct a new instance,
