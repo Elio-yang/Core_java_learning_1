@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class ConstructorTest {
     public static void main(String[] args) {
-        var stuff = new Employee[3];
+        Employee[] stuff = new Employee[3];
         stuff[0] = new Employee("Harry", 4000, 2016, 3, 23);
         stuff[1] = new Employee(6000, 2016, 2, 23);
         stuff[2] = new Employee();
@@ -29,7 +29,7 @@ class Employee {
 
     //initialize static
     static {
-        var generator = new Random();
+        Random generator = new Random();
         nextId = generator.nextInt(10000);
     }
 
