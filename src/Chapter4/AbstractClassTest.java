@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class AbstractClassTest {
     public static void main(String[] args) {
-        var people= new Person[2];
+        Person[] people= new Person[2];
         people[0]=new absEmployee("Elio",2345.8,2020,4,23);
         people[1]=new Student("Jack","Math");
         for (Person p:people){
