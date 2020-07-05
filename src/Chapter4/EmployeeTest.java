@@ -8,16 +8,19 @@ import java.util.Objects;
  */
 public class EmployeeTest {
     static class Employee {
-        private final String name;
+        private String name;
         private double salary;
         private LocalDate hireDay;
 
         public Employee(String n, double s, int year, int month, int day) {
             //Objects.requireNonNull(n,"The name can't be null");
-            name= Objects.requireNonNullElse(n,"unknown");
+            name=n;
             //name=n;
             salary=s;
             hireDay=LocalDate.of(year,month,day);
+        }
+        public Employee(){
+
         }
         public String getName(){
             return name;

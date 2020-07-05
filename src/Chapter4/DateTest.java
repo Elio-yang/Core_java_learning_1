@@ -17,9 +17,9 @@ public class DateTest {
         LocalDate newYearEve = LocalDate.of(1999, 12, 31);
         System.out.println(newYearEve);
         LocalDate newDate = newYearEve.plusDays(1000);
-        var year = newDate.getYear();
-        var month = newDate.getMonthValue();
-        var day = newDate.getDayOfMonth();
+        int year = newDate.getYear();
+        int month = newDate.getMonthValue();
+        int day = newDate.getDayOfMonth();
         System.out.println("New date is " + newDate);
         System.out.println(LocalDate.of(year, month, day));
 

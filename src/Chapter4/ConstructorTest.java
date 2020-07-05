@@ -1,6 +1,5 @@
 package Chapter4;
 
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 import java.time.LocalDate;
 import java.util.Random;
 
@@ -9,12 +8,12 @@ import java.util.Random;
  */
 public class ConstructorTest {
     public static void main(String[] args) {
-        Employee[] stuff = new Employee[3];
-        stuff[0] = new Employee("Harry", 4000, 2016, 3, 23);
-        stuff[1] = new Employee(6000, 2016, 2, 23);
-        stuff[2] = new Employee();
+        equEmployee[] stuff = new equEmployee[3];
+        stuff[0] = new equEmployee("Harry", 4000, 2016, 3, 23);
+        stuff[1] = new equEmployee(6000, 2016, 2, 23);
+        stuff[2] = new equEmployee();
 
-        for (Employee e : stuff) {
+        for (equEmployee e : stuff) {
             System.out.println(e.toString());
         }
     }
