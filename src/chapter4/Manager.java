@@ -1,7 +1,9 @@
 package chapter4;
 
 /**
- * Created by Elio Yang on 2020/7/4.
+ *
+ * @author Elio Yang
+ * @date 2020/7/4
  */
 public class Manager extends EquEmployee {
     private double bones;
