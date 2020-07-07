@@ -1,10 +1,12 @@
-package Chapter4;
+package chapter4;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 
 /**
- * Created by Elio Yang on 2020/5/17.
+ *
+ * @author Elio Yang
+ * @date 2020/5/17
  */
 public class CalenderTest {
     public static void main(String[] args) {

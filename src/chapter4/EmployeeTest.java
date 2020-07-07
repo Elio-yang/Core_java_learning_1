@@ -1,10 +1,11 @@
-package Chapter4;
+package chapter4;
 
 import java.time.LocalDate;
-import java.util.Objects;
 
 /**
- * Created by Elio Yang on 2020/6/12.
+ *
+ * @author Elio Yang
+ * @date 2020/6/12
  */
 public class EmployeeTest {
     static class Employee {

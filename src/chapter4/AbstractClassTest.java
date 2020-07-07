@@ -1,39 +1,54 @@
-package Chapter4;
+package chapter4;
 
 import java.time.LocalDate;
-import java.util.Random;
 
 /**
- * Created by Elio Yang on 2020/7/5.
+ * @author Elio Yang
+ * @date 2020/7/5
  */
 public class AbstractClassTest {
     public static void main(String[] args) {
-        Person[] people= new Person[2];
-        people[0]=new absEmployee("Elio",2345.8,2020,4,23);
-        people[1]=new Student("Jack","Math");
-        for (Person p:people){
+        AbstractPerson[] people = new AbstractPerson[2];
+        people[0] = new AbsEmployee("Elio", 2345.8, 2020, 4, 23);
+        people[1] = new Student("Jack", "Math");
+        for (AbstractPerson p : people) {
             System.out.println(p.getDescription());
             System.out.println(p.toString());
         }
     }
 }
-abstract class Person{
+
+abstract class AbstractPerson {
     private String name;
+
+    /***
+     * get a description of an AbstractPerson class object
+     * @return String to describe
+     */
     public abstract String getDescription();
 
-    public Person(String n){
-        this.name=n;
+    public AbstractPerson(String n) {
+        this.name = n;
     }
+
     public String getName() {
         return this.name;
     }
 }
-class absEmployee extends Person {
+
+class AbsEmployee extends AbstractPerson {
     private double salary;
     private LocalDate hireDay;
 
-    //three constructors
-    public absEmployee(String n, double s, int y, int m, int d) {
+    /***
+     *
+     * @param n name.
+     * @param s salary.
+     * @param y year.
+     * @param m month
+     * @param d day.
+     */
+    public AbsEmployee(String n, double s, int y, int m, int d) {
         super(n);
         this.salary = s;
         hireDay = LocalDate.of(y, m, d);
@@ -47,35 +62,38 @@ class absEmployee extends Person {
         return hireDay;
     }
 
+
     @Override
     public String getDescription() {
-        return String.format("an employee with a salary of %.2f",salary);
+        return String.format("an employee with a salary of %.2f", salary);
     }
 
-    public void raiseSalary(double byPercent){
-        double raise=this.salary*byPercent/100;
-        this.salary+=raise;
+    public void raiseSalary(double byPercent) {
+        double raise = this.salary * byPercent / 100;
+        this.salary += raise;
     }
 
     @Override
     public String toString() {
         return "absEmployee{" +
-                "name="+getName()+
+                "name=" + getName() +
                 ", salary=" + salary +
                 ", hireDay=" + hireDay +
                 '}';
     }
 }
-class Student extends Person{
+
+class Student extends AbstractPerson {
     private String major;
-    public Student(String n,String m){
+
+    public Student(String n, String m) {
         super(n);
-        this.major=m;
+        this.major = m;
     }
 
     @Override
     public String getDescription() {
-        return "a student major in"+this.major;
+        return "a student major in" + this.major;
     }
 
     @Override

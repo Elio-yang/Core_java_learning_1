@@ -1,19 +1,21 @@
-package Chapter4;
+package chapter4;
 
 import java.time.LocalDate;
 import java.util.Random;
 
 /**
- * Created by Elio Yang on 2020/7/3.
+ *
+ * @author Elio Yang
+ * @date 2020/7/3
  */
 public class ConstructorTest {
     public static void main(String[] args) {
-        equEmployee[] stuff = new equEmployee[3];
-        stuff[0] = new equEmployee("Harry", 4000, 2016, 3, 23);
-        stuff[1] = new equEmployee(6000, 2016, 2, 23);
-        stuff[2] = new equEmployee();
+        EquEmployee[] stuff = new EquEmployee[3];
+        stuff[0] = new EquEmployee("Harry", 4000, 2016, 3, 23);
+        stuff[1] = new EquEmployee(6000, 2016, 2, 23);
+        stuff[2] = new EquEmployee();
 
-        for (equEmployee e : stuff) {
+        for (EquEmployee e : stuff) {
             System.out.println(e.toString());
         }
     }
@@ -38,7 +40,14 @@ class Employee {
         nextId++;
     }
 
-    //three constructors
+    /***
+     *
+     * @param n name.
+     * @param s salary.
+     * @param y year.
+     * @param m month
+     * @param d day.
+     */
     public Employee(String n, double s, int y, int m, int d) {
         name = n;
         salary = s;

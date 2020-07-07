@@ -1,4 +1,4 @@
-package Chapter4;
+package chapter4;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -39,7 +39,7 @@ represent a special time point.
 
 For LocalDate class, we don't use constructor to construct
 objects, we should use static factory method which represents
-constructor:
+constructors:
         LocalDate newDate=LocalDate.now();
         LocalDate newDateCopy=LocalDate.of(2020,5,17);
 There are many methods too.

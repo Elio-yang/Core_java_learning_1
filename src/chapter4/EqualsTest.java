@@ -1,18 +1,20 @@
-package Chapter4;
+package chapter4;
 
 import java.time.LocalDate;
 import java.util.Objects;
 import java.util.Random;
 
 /**
- * Created by Elio Yang on 2020/7/5.
+ *
+ * @author Elio Yang
+ * @date 2020/7/5
  */
 public class EqualsTest {
     public static void main(String[] args){
-        equEmployee alice1=new equEmployee("Alice",2001.2,2020,3,23);
-        equEmployee alice2=alice1;
-        equEmployee alice3=new equEmployee("Alice",2001.2,2020,3,23);
-        equEmployee bob= new equEmployee("Bob",2001.2,2020,3,24);
+        EquEmployee alice1=new EquEmployee("Alice",2001.2,2020,3,23);
+        EquEmployee alice2=alice1;
+        EquEmployee alice3=new EquEmployee("Alice",2001.2,2020,3,23);
+        EquEmployee bob= new EquEmployee("Bob",2001.2,2020,3,24);
 
         System.out.println("alice1==alice2"+(alice1==alice2));
         System.out.println("alice1==alice3"+(alice1==alice3));
@@ -39,7 +41,7 @@ public class EqualsTest {
     }
 }
 
-class equEmployee {
+class EquEmployee {
     private static int nextId;
     private int id;
     private String name = "";
@@ -58,18 +60,25 @@ class equEmployee {
         nextId++;
     }
 
-    //three constructors
-    public equEmployee(String n, double s, int y, int m, int d) {
+    /***
+     *
+     * @param n name.
+     * @param s salary.
+     * @param y year.
+     * @param m month
+     * @param d day.
+     */
+    public EquEmployee(String n, double s, int y, int m, int d) {
         name = n;
         salary = s;
         hireDay = LocalDate.of(y, m, d);
     }
 
-    public equEmployee(double s, int y, int m, int d) {
+    public EquEmployee(double s, int y, int m, int d) {
         this("Employee #" + nextId, s, y, m, d);
     }
 
-    public equEmployee() {
+    public EquEmployee() {
     }
 
 
@@ -101,10 +110,16 @@ class equEmployee {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null) return false;
-        if (!(o instanceof equEmployee)) return false;
-        equEmployee that = (equEmployee) o;
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (!(o instanceof EquEmployee)) {
+            return false;
+        }
+        EquEmployee that = (EquEmployee) o;
         return getId() == that.getId() &&
                 Double.compare(that.getSalary(), getSalary()) == 0 &&
                 getName().equals(that.getName()) &&
@@ -117,7 +132,7 @@ class equEmployee {
     }
 }
 
-class equManager extends equEmployee {
+class equManager extends EquEmployee {
     private double bones;
 
     public equManager(String n, double salary, int y, int m, int d) {
@@ -136,9 +151,16 @@ class equManager extends equEmployee {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof equManager)) return false;
-        if (!super.equals(o)) return false;//from super class
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof equManager)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+            //from super class
+        }
         equManager that = (equManager) o;
         return Double.compare(that.bones, bones) == 0;
     }

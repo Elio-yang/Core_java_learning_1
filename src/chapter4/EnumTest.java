@@ -1,10 +1,11 @@
-package Chapter4;
-import	java.util.Collections;
+package chapter4;
 
 import java.util.Scanner;
 
 /**
- * Created by Elio Yang on 2020/7/6.
+ *
+ * @author Elio Yang
+ * @date 2020/7/6
  */
 public class EnumTest {
 
@@ -20,6 +21,12 @@ public class EnumTest {
 }
 
 enum Size {
+    /***
+     * SMALL size:small
+     * MEDIUM size:medium
+     * LARGE size:large
+     * EXTRA_LARGE size:extra_large
+     */
     SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");
     private String abbreviation;
 
