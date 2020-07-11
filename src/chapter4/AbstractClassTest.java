@@ -19,9 +19,9 @@ public class AbstractClassTest {
 }
 
 abstract class AbstractPerson {
-    private String name;
+    private final String name;
 
-    /***
+    /**
      * get a description of an AbstractPerson class object
      * @return String to describe
      */
@@ -38,9 +38,9 @@ abstract class AbstractPerson {
 
 class AbsEmployee extends AbstractPerson {
     private double salary;
-    private LocalDate hireDay;
+    private final LocalDate hireDay;
 
-    /***
+    /**
      *
      * @param n name.
      * @param s salary.
