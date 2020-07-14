@@ -28,6 +28,9 @@ class Employee1 {
     private LocalDate hireDay;
 
     public Employee1(String n, double s, int year, int month, int day) {
+        if (n==null){
+            name="unknown";
+        }
         name = n;
         salary = s;
         hireDay = LocalDate.of(year, month, day);
