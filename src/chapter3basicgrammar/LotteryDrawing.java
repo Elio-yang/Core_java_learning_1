@@ -4,9 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Created by Elio Yang on 2020/3/30.
+ *
+ * @author Elio Yang
+ * @date 2020/3/30
  */
-public class LotteryDrawing_3_4 {
+public class LotteryDrawing {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("k=?");

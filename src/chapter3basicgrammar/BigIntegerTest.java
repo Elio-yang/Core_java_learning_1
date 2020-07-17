@@ -4,9 +4,11 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
- * Created by Elio Yang on 2020/3/30.
+ *
+ * @author Elio Yang
+ * @date 2020/3/30
  */
-public class BigIntegerTest_3_3 {
+public class BigIntegerTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("How many numbers you need to draw?");

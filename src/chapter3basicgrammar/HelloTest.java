@@ -2,9 +2,11 @@ package chapter3basicgrammar;
 
 /**
  * This program displays a greeting.
- * Created by Elio on 2020/3/30.
+ *
+ * @author Elio
+ * @date 2020/3/30
  */
-public class helloTest_2_1 {
+public class HelloTest {
     public static void main(String[] args) {
         String greeting = "Welcome to Core Java";
         System.out.println(greeting);

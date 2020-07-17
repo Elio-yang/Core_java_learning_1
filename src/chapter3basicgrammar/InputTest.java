@@ -3,9 +3,11 @@ package chapter3basicgrammar;
 import java.util.Scanner;
 
 /**
- * Created by Elio Yang on 2020/3/30.
+ *
+ * @author Elio Yang
+ * @date 2020/3/30
  */
-public class inputTest_3_2 {
+public class InputTest {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         //test demo of scanner

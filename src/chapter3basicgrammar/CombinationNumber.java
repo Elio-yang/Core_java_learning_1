@@ -4,9 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 /**
- * Created by Elio Yang on 2020/3/31.
+ *
+ * @author Elio Yang
+ * @date 2020/3/31
  */
-public class CombinationNumber_3_5 {
+public class CombinationNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("How many levels?");
