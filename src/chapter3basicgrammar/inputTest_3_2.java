@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3basicgrammar;
 
 import java.util.Scanner;
 

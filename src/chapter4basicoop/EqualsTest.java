@@ -1,4 +1,4 @@
-package chapter4;
+package chapter4basicoop;
 
 import java.time.LocalDate;
 import java.util.Objects;
@@ -132,10 +132,10 @@ class EquEmployee {
     }
 }
 
-class equManager extends EquEmployee {
+class EquManager extends EquEmployee {
     private double bones;
 
-    public equManager(String n, double salary, int y, int m, int d) {
+    public EquManager(String n, double salary, int y, int m, int d) {
         super(n, salary, y, m, d);
         bones = 0;
     }
@@ -154,14 +154,14 @@ class equManager extends EquEmployee {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof equManager)) {
+        if (!(o instanceof EquManager)) {
             return false;
         }
         if (!super.equals(o)) {
             return false;
             //from super class
         }
-        equManager that = (equManager) o;
+        EquManager that = (EquManager) o;
         return Double.compare(that.bones, bones) == 0;
     }
 

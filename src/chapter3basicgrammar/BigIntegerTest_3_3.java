@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3basicgrammar;
 
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -16,8 +16,9 @@ public class BigIntegerTest_3_3 {
         BigInteger lotteryOdds;
         lotteryOdds = BigInteger.ONE;
         //when doing calculus of BigInteger there are special ways.
-        for (int i = 1; i <= k; i++)
+        for (int i = 1; i <= k; i++){
             lotteryOdds = lotteryOdds.multiply(BigInteger.valueOf(n - i + 1)).divide(BigInteger.valueOf(i));
+        }
         System.out.println("Your odds are 1 in " + lotteryOdds + ".Good Luck!");
     }
 }

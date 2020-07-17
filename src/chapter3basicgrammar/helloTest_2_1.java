@@ -1,4 +1,4 @@
-package chapter3;
+package chapter3basicgrammar;
 
 /**
  * This program displays a greeting.

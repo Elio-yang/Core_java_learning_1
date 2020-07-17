@@ -1,4 +1,4 @@
-package chapter4;
+package chapter4basicoop;
 
 import java.time.LocalDate;
 
@@ -90,7 +90,6 @@ class Student extends AbstractPerson {
         super(n);
         this.major = m;
     }
-
     @Override
     public String getDescription() {
         return "a student major in" + this.major;
