@@ -4,5 +4,3 @@ This is a learning project through book ``Core Java``
 basic java grammar 
 ## chapter 4
 basic ideas of OOP in Java
-
-hello test
