@@ -1,5 +1,7 @@
 package chapter4basicoop;
 
+import sun.nio.cs.ext.MacArabic;
+
 /**
  *
  * @author Elio Yang
@@ -9,6 +11,7 @@ public class Manager extends EquEmployee {
     private double bones;
     public Manager(String n,double salary, int y,int m, int d){
         super(n,salary,y,m,d);
+        //call constructor with param n,salary,y,m,d in super class
         bones=0;
     }
     @Override
@@ -31,5 +34,10 @@ public class Manager extends EquEmployee {
             System.out.println(e.toString());
         }
 
+        //Manager colleague=(Manager)staff[1];
+        //Exception in thread "main" java.lang.ClassCastException
+        if (staff[1] instanceof Manager){
+            Manager colleague=(Manager)staff[1];
+        }
     }
 }
