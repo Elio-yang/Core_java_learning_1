@@ -1,4 +1,4 @@
-package chapter4basicoop;
+package chapter5inheritance;
 
 import java.time.LocalDate;
 
@@ -9,8 +9,10 @@ import java.time.LocalDate;
 public class AbstractClassTest {
     public static void main(String[] args) {
         AbstractPerson[] people = new AbstractPerson[2];
+        //not instance
         people[0] = new AbsEmployee("Elio", 2345.8, 2020, 4, 23);
-        people[1] = new Student("Jack", "Math");
+        people[1] = new AbsStudent("Jack", "Math");
+        //from son class to super abstract class :polymorphism
         for (AbstractPerson p : people) {
             System.out.println(p.getDescription());
             System.out.println(p.toString());
@@ -18,6 +20,11 @@ public class AbstractClassTest {
     }
 }
 
+/**
+ * this is an abstract class
+ * You can't make an instance of an abstract class
+ * but you can build an object of son class.
+ */
 abstract class AbstractPerson {
     private final String name;
 
@@ -26,13 +33,14 @@ abstract class AbstractPerson {
      * @return String to describe
      */
     public abstract String getDescription();
+    //no implementation needed as an abstract method.
 
     public AbstractPerson(String n) {
-        this.name = n;
+        name = n;
     }
 
     public String getName() {
-        return this.name;
+        return name;
     }
 }
 
@@ -40,16 +48,9 @@ class AbsEmployee extends AbstractPerson {
     private double salary;
     private final LocalDate hireDay;
 
-    /**
-     *
-     * @param n name.
-     * @param s salary.
-     * @param y year.
-     * @param m month
-     * @param d day.
-     */
     public AbsEmployee(String n, double s, int y, int m, int d) {
         super(n);
+        //call the constructor in super class with param n
         this.salary = s;
         hireDay = LocalDate.of(y, m, d);
     }
@@ -83,16 +84,17 @@ class AbsEmployee extends AbstractPerson {
     }
 }
 
-class Student extends AbstractPerson {
+class AbsStudent extends AbstractPerson {
     private String major;
 
-    public Student(String n, String m) {
+    public AbsStudent(String n, String m) {
         super(n);
+        //call super class constructor with param n type String
         this.major = m;
     }
     @Override
     public String getDescription() {
-        return "a student major in" + this.major;
+        return String.format("a student with major %s",this.major);
     }
 
     @Override
