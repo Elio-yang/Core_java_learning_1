@@ -30,6 +30,7 @@ abstract class AbstractPerson {
 
     /**
      * get a description of an AbstractPerson class object
+     *
      * @return String to describe
      */
     public abstract String getDescription();
@@ -92,9 +93,10 @@ class AbsStudent extends AbstractPerson {
         //call super class constructor with param n type String
         this.major = m;
     }
+
     @Override
     public String getDescription() {
-        return String.format("a student with major %s",this.major);
+        return String.format("a student with major %s", this.major);
     }
 
     @Override

@@ -5,24 +5,23 @@ import java.util.Objects;
 import java.util.Random;
 
 /**
- *
  * @author Elio Yang
  * @date 2020/7/5
  */
 public class EqualsTest {
-    public static void main(String[] args){
-        EquEmployee alice1=new EquEmployee("Alice",2001.2,2020,3,23);
-        EquEmployee alice2=alice1;
-        EquEmployee alice3=new EquEmployee("Alice",2001.2,2020,3,23);
-        EquEmployee bob= new EquEmployee("Bob",2001.2,2020,3,24);
+    public static void main(String[] args) {
+        EquEmployee alice1 = new EquEmployee("Alice", 2001.2, 2020, 3, 23);
+        EquEmployee alice2 = alice1;
+        EquEmployee alice3 = new EquEmployee("Alice", 2001.2, 2020, 3, 23);
+        EquEmployee bob = new EquEmployee("Bob", 2001.2, 2020, 3, 24);
 
-        System.out.println("alice1==alice2"+(alice1==alice2));
-        System.out.println("alice1==alice3"+(alice1==alice3));
+        System.out.println("alice1==alice2" + (alice1 == alice2));
+        System.out.println("alice1==alice3" + (alice1 == alice3));
         System.out.println(alice1.equals(alice3));
         System.out.println(alice1.equals(bob));
 
-        Manager carl= new Manager("Carl",2020.1,2020,3,24);
-        Manager boss= new Manager("Carl",2020.1,2020,3,24);
+        EquManager carl = new EquManager("Carl", 2020.1, 2020, 3, 24);
+        EquManager boss = new EquManager("Carl", 2020.1, 2020, 3, 24);
         boss.setBones(500);
 
         System.out.println(boss.toString());
@@ -100,7 +99,7 @@ class EquEmployee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return  getClass().getName()+"{" +
                 "id=" + this.getId() +
                 ", name='" + this.getName() + '\'' +
                 ", salary=" + this.getSalary() +
@@ -108,17 +107,45 @@ class EquEmployee {
                 '}';
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) {
+//            return true;
+//        }
+//        if (o == null) {
+//            return false;
+//        }
+//        if (!(o instanceof EquEmployee)) {
+//            return false;
+//        }
+//        EquEmployee that = (EquEmployee) o;
+//        return getId() == that.getId() &&
+//                Double.compare(that.getSalary(), getSalary()) == 0 &&
+//                getName().equals(that.getName()) &&
+//                getHireDay().equals(that.getHireDay());
+//    }
+
+    public boolean equals_own(Object otherObj) {
+        if (this == otherObj) {
             return true;
         }
-        if (o == null) {
+        if (otherObj == null) {
             return false;
         }
-        if (!(o instanceof EquEmployee)) {
+        if (getClass() != otherObj.getClass()) {
             return false;
         }
+        EquEmployee other = (EquEmployee) otherObj;
+        return Objects.equals(name, other.name)
+                && Double.compare(salary, other.salary) == 0
+                && Objects.equals(hireDay, other.hireDay)
+                && id == other.id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof EquEmployee)) return false;
         EquEmployee that = (EquEmployee) o;
         return getId() == that.getId() &&
                 Double.compare(that.getSalary(), getSalary()) == 0 &&
@@ -149,17 +176,15 @@ class EquManager extends EquEmployee {
         this.bones = bones;
     }
 
+    public Double getBones(){
+        return this.bones;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof EquManager)) {
-            return false;
-        }
         if (!super.equals(o)) {
             return false;
-            //from super class
+//from super class
         }
         EquManager that = (EquManager) o;
         return Double.compare(that.bones, bones) == 0;
@@ -168,5 +193,21 @@ class EquManager extends EquEmployee {
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), bones);
+    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(getId(), getName(), getSalary(), getHireDay());
+//    }
+//    hashCode() in super class
+
+    @Override
+    public String toString() {
+        return  getClass().getName()+"{" +
+                "id=" + this.getId() +
+                ", name='" + this.getName() + '\'' +
+                ", salary=" + this.getSalary() +
+                ", hireDay=" + this.getHireDay() +
+                ",bonus="+this.getBones()+
+                '}';
     }
 }
