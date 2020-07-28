@@ -99,7 +99,7 @@ class EquEmployee {
 
     @Override
     public String toString() {
-        return  getClass().getName()+"{" +
+        return getClass().getName() + "{" +
                 "id=" + this.getId() +
                 ", name='" + this.getName() + '\'' +
                 ", salary=" + this.getSalary() +
@@ -176,7 +176,7 @@ class EquManager extends EquEmployee {
         this.bones = bones;
     }
 
-    public Double getBones(){
+    public Double getBones() {
         return this.bones;
     }
 
@@ -184,7 +184,7 @@ class EquManager extends EquEmployee {
     public boolean equals(Object o) {
         if (!super.equals(o)) {
             return false;
-//from super class
+
         }
         EquManager that = (EquManager) o;
         return Double.compare(that.bones, bones) == 0;
@@ -194,20 +194,15 @@ class EquManager extends EquEmployee {
     public int hashCode() {
         return Objects.hash(super.hashCode(), bones);
     }
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(getId(), getName(), getSalary(), getHireDay());
-//    }
-//    hashCode() in super class
 
     @Override
     public String toString() {
-        return  getClass().getName()+"{" +
+        return getClass().getName() + "{" +
                 "id=" + this.getId() +
                 ", name='" + this.getName() + '\'' +
                 ", salary=" + this.getSalary() +
                 ", hireDay=" + this.getHireDay() +
-                ",bonus="+this.getBones()+
+                ",bonus=" + this.getBones() +
                 '}';
     }
 }
