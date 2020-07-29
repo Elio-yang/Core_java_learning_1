@@ -15,7 +15,6 @@ public class ClassTest {
 
         System.out.println(e1.getClass().getName()+ " " +e1.getName());
         System.out.println(m1.getClass().getName()+ " " +m1.getName());
-
         Random generator=new Random();
         String name=generator.getClass().getName();
         System.out.println(generator.getClass().getName());
