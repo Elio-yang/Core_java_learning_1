@@ -1,7 +1,4 @@
 package chapter5inheritance;
-
-import com.sun.org.apache.xpath.internal.operations.Mod;
-
 import java.lang.reflect.*;
 import java.util.Scanner;
 
@@ -84,7 +81,7 @@ public class ReflectionTest {
         }
     }
 
-    public static void printFields(Class cl) {
+    public static void printFields( Class cl) {
         Field[] fields = cl.getFields();
         for (Field f : fields) {
             Class fieldType = f.getType();
