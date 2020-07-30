@@ -1,4 +1,5 @@
 package chapter5inheritance;
+
 import java.lang.reflect.*;
 import java.util.Scanner;
 
@@ -18,9 +19,9 @@ public class ReflectionTest {
         }
         Class cl = Class.forName(name);
         Class supercl = cl.getSuperclass();
-        String modifiers = Modifier.toString(cl.getModifiers());
-        if (modifiers.length() > 0) {
-            System.out.print(modifiers + " ");
+        String mod = Modifier.toString(cl.getModifiers());
+        if (mod.length() > 0) {
+            System.out.print(mod + " ");
         }
         System.out.print("class " + name);
         if (supercl != null && supercl != Object.class) {
@@ -36,13 +37,13 @@ public class ReflectionTest {
     }
 
     public static void printConstructor(Class cl) {
-        Constructor[] constructors = cl.getConstructors();
-        for (Constructor c : constructors) {
+        Constructor[] clConstructors = cl.getConstructors();
+        for (Constructor c : clConstructors) {
             String name = c.getName();
             System.out.print("   ");
-            String modifiers = Modifier.toString(c.getModifiers());
-            if (modifiers.length() > 0) {
-                System.out.print(modifiers + " ");
+            String mod = Modifier.toString(c.getModifiers());
+            if (mod.length() > 0) {
+                System.out.print(mod + " ");
             }
             System.out.print(name + "(");
 
@@ -58,16 +59,16 @@ public class ReflectionTest {
     }
 
     public static void printMethod(Class cl) {
-        Method[] methods = cl.getMethods();
-        for (Method m : methods) {
+        Method[] clMethods = cl.getMethods();
+        for (Method m : clMethods) {
             Class retType = m.getReturnType();
             String name = m.getName();
 
             System.out.print("   ");
 
-            String modifiers = Modifier.toString(m.getModifiers());
-            if (modifiers.length() > 0) {
-                System.out.print(modifiers + " ");
+            String mod = Modifier.toString(m.getModifiers());
+            if (mod.length() > 0) {
+                System.out.print(mod + " ");
             }
             System.out.print(retType.getName() + " " + name + "(");
             Class[] paraType = m.getParameterTypes();
@@ -81,15 +82,15 @@ public class ReflectionTest {
         }
     }
 
-    public static void printFields( Class cl) {
-        Field[] fields = cl.getFields();
-        for (Field f : fields) {
+    public static void printFields(Class cl) {
+        Field[] clFields = cl.getFields();
+        for (Field f : clFields) {
             Class fieldType = f.getType();
             String name = f.getName();
             System.out.print("   ");
-            String modifiers = Modifier.toString(f.getModifiers());
-            if (modifiers.length() > 0) {
-                System.out.print(modifiers + " ");
+            String mod = Modifier.toString(f.getModifiers());
+            if (mod.length() > 0) {
+                System.out.print(mod + " ");
             }
             System.out.println(fieldType.getName() + " " + name + ";");
         }
