@@ -37,7 +37,7 @@ public class ReflectionTest {
     }
 
     public static void printConstructor(Class cl) {
-        Constructor[] clConstructors = cl.getConstructors();
+        Constructor<?>[] clConstructors = cl.getConstructors();
         for (Constructor c : clConstructors) {
             String name = c.getName();
             System.out.print("   ");
