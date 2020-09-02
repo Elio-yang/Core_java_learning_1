@@ -49,7 +49,7 @@ class Employee implements Comparable<Employee>{
     }
     @Override
     public String toString() {
-        return "[name="+this.getName()+
+        return "[Name="+this.getName()+
                 ", salary="+this.getSalary()+
                 "]";
     }
